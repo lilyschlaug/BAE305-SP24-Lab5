@@ -60,7 +60,7 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/52452dfb-5acd-435d-a2b5-1daebca304f0)
 
 **Figure 4. Schematic for LED dimmer using PWM circuit**
-**Comment: For the purpose of this lab the RGB LED was not used. A single yellow LED was used so branches R1,R4, and R10 can be neglected.
+**Comment: For the purpose of this lab the RGB LED was not used. A single yellow LED was used so branches R1 and R4 can be neglected.
 
 ![IMG_7749](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/2685149f-dcbc-42bc-b1c5-22ff780d1e96)
 
