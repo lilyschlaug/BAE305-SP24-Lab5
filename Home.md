@@ -31,15 +31,18 @@ You must include Schematics, Engineering Drawings, and Programming if appropriat
 3. This is step 3.
 I am now including an image as an example: 
 ![](https://github.com/joedvorak/BAE305-Sp19-Lab1/blob/master/Repository%20Creation.png)
+
 # Test Equipment
 1x oscilloscope (Brand info????) 
-List multimeters and other equipment used for testing and creating results.
+
 # Test Procedures
 How did you test the system to get your results
 
 # Test Results
 
 Part 1 - Blinking an LED
+
+This was a simple program to turn the LED on for one second and off for one second so that it would appear to blink. This was to make sure that the Arduino was connected properly. The major sections of the computer program were to initialize the digital pin output. Next, the program ran a loop to turn the LED on and off for a second each until the user terminates the program. 
 
 Part 2 – Controlling an LED with a potentiometer
 
@@ -50,15 +53,16 @@ Part 4 – LED dimmer using PWM
 # Discussion
 
 Part 1 - Blinking an LED
+
 Your LED flashes with a delay from the uploaded code. Decrease this delay until the LED just stops blinking. That is, the point where the light is still blinking, but appears to stay constantly illuminated. 
 
-a.	What is the value of your delay now? 10
+a.	What is the value of your delay now? 
 
-b.	What field may this “persistence of vision” play a greater role in? brain is not as fast 
+- The delay had a value of 10 milliseconds. 
 
-c.	Discuss this further in your lab report.
+b.	What field may this “persistence of vision” play a greater role in? 
 
-d.	Delays are in milliseconds 
+- The persistence of vision is that our brain is not as fast and can not see the blink, even though we know that one is still occurring in the LED. It is an optical illusion that the LED no longer appears to blink. Essentially, the blink is so quick that our eyes merge the "on" and "off" state to form a continuous image. 
 
 Part 2 – Controlling an LED with a potentiometer
 
