@@ -33,7 +33,7 @@ I am now including an image as an example:
 ![](https://github.com/joedvorak/BAE305-Sp19-Lab1/blob/master/Repository%20Creation.png)
 
 # Test Equipment
-1x oscilloscope (Brand info????) 
+1x Oscilloscope: Tektronix TDS 2012 
 
 # Test Procedures
 How did you test the system to get your results
@@ -54,7 +54,7 @@ For part three, we found that the minimum and maximum analog value from the phot
 
 Part 4 – LED dimmer using PWM
 
-
+For part three, the result allowed us to change the potentiometer and cause the LED to dim or brighten. This is due to changing the frequency of the PWM, which impacts the amount of voltage that is able to reach the LED. 
 
 # Discussion
 
@@ -96,9 +96,8 @@ Part 4 – LED dimmer using PWM
 
 Connect the oscilloscope to the LED pin and observe and record what happens to the signal and the LED brightness when you turn the knob of the potentiometer.
 
-- Frequency does not change, only pulse width changes when potentiometer is changed 
+- When connecting the oscilloscope, the frequency of the signal does not change. Only pulse width modulation changes as potentiometer value is changed. This changes the voltage that reaches the LED, causing it to dim. As the digital signal has a longer "off" period, the average PWM voltage reaching the LED decreases. 
 
-Did you make any design decisions that had an impact on the results? How did they impact the results? What do the results mean?
 # Conclusion
 
 **Code for Potentiometer and LED**
