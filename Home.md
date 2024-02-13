@@ -1,4 +1,3 @@
-Welcome to the BAE305-SP24-Lab5 wiki!
 
 # Lab 5 - The Brain: Microcontrollers
 
@@ -24,19 +23,164 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 1x A momentary button (SparkFun Inventor’s kit)
 
 # Assembly Procedures
-Provide basic summary of steps performed in lab (Do not copy and paste from lab assignment.) The important part here is to provide detail that you had to develop in the lab which will be more important in later labs.
-You must include Schematics, Engineering Drawings, and Programming if appropriate in this section.
-1. This is step 1.
-2. This is step 2.
-3. This is step 3.
-I am now including an image as an example: 
-![](https://github.com/joedvorak/BAE305-Sp19-Lab1/blob/master/Repository%20Creation.png)
+**Part 1 - Blinking an LED**
+
+1. 
+
+**Image of Part 1 Circuit Schematic**
+![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/9179e068-15c9-4099-8ed2-fafa2eac4bf0)
+
+
+**Part 2 - Controlling an LED with a potentiometer**
+
+1. 
+
+**Image of Part 2 Circuit schematic**
+![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/7519fa72-63d9-4083-892c-11c78e1dd565)
+
+
+**Part 3 - Controlling an LED with a photoresistor**
+
+1. 
+
+**Image of Part 3 Circuit schematic**
+![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/823d4db5-6658-4907-90cc-b1a25ac7c3c4)
+
+
+**Part 4 - LED dimmer using PWM**
+
+1. 
+**Image of Part 4 Circuit schematic**
+![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/52452dfb-5acd-435d-a2b5-1daebca304f0)
+**Comment: For the purpose of this lab the RGB LED was not used. A single yellow LED was used so branches R1,R4, and R10 can be neglected.
+
+**Image of Part 4 Circuit with Oscilloscope leads**
+![IMG_7749](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/2685149f-dcbc-42bc-b1c5-22ff780d1e96)
+
 
 # Test Equipment
 1x Oscilloscope: Tektronix TDS 2012 
 
 # Test Procedures
-How did you test the system to get your results
+**Part 1 - Blinking an LED**
+
+1. 
+
+**Part 1 Code**
+```c++
+/ the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  
+digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(analogRead(A0));                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(analogRead(A0));                      // wait for a second
+
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // print out the value you read:
+  Serial.println(sensorValue);
+}
+```
+
+**Part 2 - Controlling an LED with a potentiometer**
+
+1. 
+
+**Part 2 Code**
+**Code for Night Light**
+
+```c++
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // print out the value you read:
+  Serial.println(sensorValue);
+
+  if (sensorValue>400) //Dark
+  {
+  digitalWrite(LED_BUILTIN,HIGH); 
+  }
+  else {
+    digitalWrite(LED_BUILTIN,LOW); 
+  }
+}
+```
+
+**Part 3 - Controlling an LED with a photoresistor**
+
+1. 
+
+**Part 3 Code**
+**Code for nightlight with potentiometer**
+```c++
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(PIN5, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A1);
+  // print out the value you read:
+  Serial.println(sensorValue);
+
+  if (sensorValue>400) //Dark
+  {
+  digitalWrite(PIN5,HIGH); 
+  }
+  else {
+    digitalWrite(PIN5,LOW); 
+  }
+}
+```
+
+**Part 4 - LED dimmer using PWM**
+
+1. 
+
+**Part 4 Code**
+**Code for    the last part** 
+```c++
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(PIN5, OUTPUT);
+  
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+int A;
+
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A1);
+  // print out the value you read:
+  Serial.println(sensorValue);
+
+
+  A = map(sensorValue, 0, 1023, 0, 255);
+  analogWrite(PIN5,A);
+}
+```
 
 # Test Results
 
@@ -98,102 +242,12 @@ Connect the oscilloscope to the LED pin and observe and record what happens to t
 
 - When connecting the oscilloscope, the frequency of the signal does not change. Only pulse width modulation changes as potentiometer value is changed. This changes the voltage that reaches the LED, causing it to dim. As the digital signal has a longer "off" period, the average PWM voltage reaching the LED decreases. 
 
+**Image of resulting signal displayed on Osciliscope**
+![IMG_7751](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/954841dc-4ba6-4221-ae4b-7e770a88b15f)
+
+
 # Conclusion
 
-**Code for Potentiometer and LED**
-```c++
-/ the setup routine runs once when you press reset:
-void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-// the loop routine runs over and over again forever:
-void loop() {
-  
-digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(analogRead(A0));                      // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
-  delay(analogRead(A0));                      // wait for a second
-
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  // print out the value you read:
-  Serial.println(sensorValue);
-}
-```
-**Code for Night Light**
-
-```c++
-void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-// the loop routine runs over and over again forever:
-void loop() {
-
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  // print out the value you read:
-  Serial.println(sensorValue);
-
-  if (sensorValue>400) //Dark
-  {
-  digitalWrite(LED_BUILTIN,HIGH); 
-  }
-  else {
-    digitalWrite(LED_BUILTIN,LOW); 
-  }
-}
-```
-**Code for nightlight with potentiometer**
-```c++
-void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  pinMode(PIN5, OUTPUT);
-}
-
-// the loop routine runs over and over again forever:
-void loop() {
-
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A1);
-  // print out the value you read:
-  Serial.println(sensorValue);
-
-  if (sensorValue>400) //Dark
-  {
-  digitalWrite(PIN5,HIGH); 
-  }
-  else {
-    digitalWrite(PIN5,LOW); 
-  }
-}
-```
-**Code for    the last part** 
-```c++
-void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  pinMode(PIN5, OUTPUT);
-  
-}
-
-// the loop routine runs over and over again forever:
-void loop() {
-int A;
-
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A1);
-  // print out the value you read:
-  Serial.println(sensorValue);
 
 
-  A = map(sensorValue, 0, 1023, 0, 255);
-  analogWrite(PIN5,A);
-}
-```
+
