@@ -27,36 +27,44 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 
 1. 
 
-**Image of Part 1 Circuit Schematic**
+
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/9179e068-15c9-4099-8ed2-fafa2eac4bf0)
 
+**Figure 1. Schematic for Blinking an LED circuit**
 
 **Part 2 - Controlling an LED with a potentiometer**
 
 1. 
 
-**Image of Part 2 Circuit schematic**
+
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/7519fa72-63d9-4083-892c-11c78e1dd565)
 
+**Figure 2. Schematic for Controlling an LED with a potentiometer circuit**
 
 **Part 3 - Controlling an LED with a photoresistor**
 
 1. 
 
-**Image of Part 3 Circuit schematic**
+
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/823d4db5-6658-4907-90cc-b1a25ac7c3c4)
 
+**Figure 3. Schematic for Controlling an LED with a photoresistor circuit**
 
 **Part 4 - LED dimmer using PWM**
 
 1. 
-**Image of Part 4 Circuit schematic**
+
+
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/52452dfb-5acd-435d-a2b5-1daebca304f0)
+
+**Figure 4. Schematic for LED dimmer using PWM circuit**
 **Comment: For the purpose of this lab the RGB LED was not used. A single yellow LED was used so branches R1,R4, and R10 can be neglected.
 
-**Image of Part 4 Circuit with Oscilloscope leads**
+
+
 ![IMG_7749](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/2685149f-dcbc-42bc-b1c5-22ff780d1e96)
 
+**Figure 5. Image of LED dimmer using PWM circuit with oscilloscope leads**
 
 # Test Equipment
 1x Oscilloscope: Tektronix TDS 2012 
@@ -242,12 +250,16 @@ Connect the oscilloscope to the LED pin and observe and record what happens to t
 
 - When connecting the oscilloscope, the frequency of the signal does not change. Only pulse width modulation changes as potentiometer value is changed. This changes the voltage that reaches the LED, causing it to dim. As the digital signal has a longer "off" period, the average PWM voltage reaching the LED decreases. 
 
-**Image of resulting signal displayed on Osciliscope**
+
 ![IMG_7751](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/954841dc-4ba6-4221-ae4b-7e770a88b15f)
 
+**Figure 6. Displayed PWM signal**
 
 # Conclusion
 
-
+# Sources 
+**Figures 1-4 circuit schematic images**
+ 
+JOEL_E_B. “Sparkfun Inventor’s Kit Experiment Guide - v4.1.” SparkFun Inventor’s Kit Experiment Guide - v4.1 - SparkFun Learn, learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/project-1-light. Accessed 13 Feb. 2024. 
 
 
