@@ -36,11 +36,20 @@ I am now including an image as an example:
 List multimeters and other equipment used for testing and creating results.
 # Test Procedures
 How did you test the system to get your results
+
 # Test Results
-What are your results?
+
+Part 1 - Blinking an LED
+
+Part 2 – Controlling an LED with a potentiometer
+
+Part 3 – Controlling an LED with a photoresistor
+
+Part 4 – LED dimmer using PWM
+
 # Discussion
 
-Part 1 - Blinking an LED 
+Part 1 - Blinking an LED
 Your LED flashes with a delay from the uploaded code. Decrease this delay until the LED just stops blinking. That is, the point where the light is still blinking, but appears to stay constantly illuminated. 
 
 a.	What is the value of your delay now? 10
