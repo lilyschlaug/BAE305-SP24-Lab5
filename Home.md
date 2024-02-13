@@ -4,8 +4,8 @@ Welcome to the BAE305-SP24-Lab5 wiki!
 
 # By: Noah Lane and Lily Schlaug
 # Summary
-Lab goal; summary of work performed; summary of outcome
-Lab 1 will be somewhat different since this is an introduction to the equipment.
+During this lab, we used Arduino as a microcontroller to understand the basics of using microcontrollers in circuits. Arduino IDE software was used throughout the lab to compile and run open-source code for different tasks. An LED was used to ensure that circuits were built and programmed properly to achieve the desired outcome. First, we made the LED blink. Then, controlled the LED with a potentiometer. Next, we controlled the LED with a photoresistor. Finally, we used pulse width modulation (PWM) to dim the LED. The outcome of this lab was to familiarize us with Arduino IDE and the Red Board to use microcontrollers. 
+
 # Materials
 List materials used in the lab (not the testing equipment, but that used to build the lab project)
 # Assembly Procedures
