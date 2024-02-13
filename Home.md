@@ -25,8 +25,9 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 # Assembly Procedures
 **Part 1 - Blinking an LED**
 
-1. 
-
+1. Connect the LED and 330 Ω resistor in series on the solderless breadboard
+2. Connect digital pin 13 of the redboard to the positive lead of the LED
+3. Connect the resistor to ground 
 
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/9179e068-15c9-4099-8ed2-fafa2eac4bf0)
 
@@ -34,8 +35,9 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 
 **Part 2 - Controlling an LED with a potentiometer**
 
-1. 
-
+1. Begin with the Figure 1 circuit
+2. Add the potentiometer to the breadboard
+3. Connect the first lead to the 5V power pin on the breadboard, the central lead to A0 and the last lead to ground 
 
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/7519fa72-63d9-4083-892c-11c78e1dd565)
 
@@ -43,8 +45,8 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 
 **Part 3 - Controlling an LED with a photoresistor**
 
-1. 
-
+1. Begin with the circuit from Figure 2
+2. Replace the potentiometer with the photoresistor and a 10 kΩ resistor in series
 
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/823d4db5-6658-4907-90cc-b1a25ac7c3c4)
 
@@ -52,15 +54,13 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 
 **Part 4 - LED dimmer using PWM**
 
-1. 
-
+1. Begin with the circuit from Figure 2
+2. Move digital pin 13 to digital(~PWM) pin 6
 
 ![image](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/52452dfb-5acd-435d-a2b5-1daebca304f0)
 
 **Figure 4. Schematic for LED dimmer using PWM circuit**
 **Comment: For the purpose of this lab the RGB LED was not used. A single yellow LED was used so branches R1,R4, and R10 can be neglected.
-
-
 
 ![IMG_7749](https://github.com/npla225/BAE305-SP24-Lab5/assets/156371043/2685149f-dcbc-42bc-b1c5-22ff780d1e96)
 
