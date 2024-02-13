@@ -46,9 +46,15 @@ This was a simple program to turn the LED on for one second and off for one seco
 
 Part 2 – Controlling an LED with a potentiometer
 
+Part 2 resulted in using the serial monitor tool to visualize how the count values went up and down as the potentiometer was changed. 
+
 Part 3 – Controlling an LED with a photoresistor
 
+For part three, we found that the minimum and maximum analog value from the photoresistor were 136 and 650 milliseconds, respectively. By using an if/else statement, we were able to create a "night light" by setting a threshold value for the light to turn on when dark. 
+
 Part 4 – LED dimmer using PWM
+
+
 
 # Discussion
 
@@ -72,11 +78,13 @@ b.	In your lab report, list a few examples of real-world examples which can be d
 
 c.	What happens to the Serial Monitor Refresh rate as you move the potentiometer to control the LED blinking time?
 
-ci.	As the potentiometer is moved, the blinking time gets greater or smaller, depending on the direction it is moved. 
+- As the potentiometer is moved, the blinking time gets greater or smaller, depending on the direction it is moved. 
 
 Part 3 – Controlling an LED with a photoresistor
 
 a.	Does the LED turn on immediately after blocking the light? What about when you remove the object blocking the light, does the LED turns of immediately?
+
+- There is a slight delay in both situations. This is because it takes a small amount of time for the microcontroller to communicate with the software, and then send a signal back to turn on or off the LED. 
 
 Replace the 10k resistor with another LED (negative leg to ground). 
 
