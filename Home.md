@@ -95,8 +95,9 @@ void loop() {
 **Part 2 - Controlling an LED with a potentiometer**
 
 1. Open the Analog Read Serial program from the Arduino library located under File> Basics> AnalogReadSerial
-2. Copy the code from the Blink program into AnalogReadSerial
-3. Change the interval of Blink from 1000 to A0 so it will be controlled by the potentiometer
+2. Copy the code from the Blink program inside the loop for AnalogReadSerial
+3. Change the interval of Blink from 1 second (1000) to A0 so the interval will be directly controlled by the potentiometer
+4. Download the program to the Arduino and run the program
 
 **Part 2 Code**
 ```c++
@@ -124,41 +125,53 @@ digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
 
 **Part 3 - Controlling an LED with a photoresistor**
 
-1. 
+1. Open the program from Part 2
+2. With the photoresistor connected and the program running cover the photoresistor with different objects
+3. Record the highest and lowest analogue values displayed 
+4. insert an if statement inside the for loop
+5. Establish the protocol if the photoresistor detects a value greater than the max analog value determined experimentally then turn on the LED
+6. Add an else statement for any value lower than the max analog value for the LED to remain off
+7. Download the program to the Arduino and run the program
+
 
 **Part 3 Code**
-**Code for nightlight with potentiometer**
+**Code for Night Light**
+
 ```c++
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
-  pinMode(PIN5, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
 
   // read the input on analog pin 0:
-  int sensorValue = analogRead(A1);
+  int sensorValue = analogRead(A0);
   // print out the value you read:
   Serial.println(sensorValue);
 
   if (sensorValue>400) //Dark
   {
-  digitalWrite(PIN5,HIGH); 
+  digitalWrite(LED_BUILTIN,HIGH); 
   }
   else {
-    digitalWrite(PIN5,LOW); 
+    digitalWrite(LED_BUILTIN,LOW); 
   }
 }
 ```
 
 **Part 4 - LED dimmer using PWM**
 
-1. 
+1. Begin with the program from part 2
+2. Map the displayed voltage values from 0 to 1023 to 0 to 255 using the map function
+3. Write the mapped value to a pin output using the analogWrite function
+3. Attach the oscilloscope lead to the LED pin and ground
+5. Download the program to the Arduino and run the program
 
 **Part 4 Code**
-**Code for    the last part** 
+
 ```c++
 void setup() {
   // initialize serial communication at 9600 bits per second:
@@ -256,29 +269,29 @@ JOEL_E_B. “Sparkfun Inventor’s Kit Experiment Guide - v4.1.” SparkFun Inve
 
 
 
-**Code for Night Light**
 
+**Code for nightlight with potentiometer**
 ```c++
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(PIN5, OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
 
   // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
+  int sensorValue = analogRead(A1);
   // print out the value you read:
   Serial.println(sensorValue);
 
   if (sensorValue>400) //Dark
   {
-  digitalWrite(LED_BUILTIN,HIGH); 
+  digitalWrite(PIN5,HIGH); 
   }
   else {
-    digitalWrite(LED_BUILTIN,LOW); 
+    digitalWrite(PIN5,LOW); 
   }
 }
 ```
