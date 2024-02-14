@@ -243,11 +243,11 @@ a.	Does the LED turn on immediately after blocking the light? What about when yo
 
 - There is a slight delay in both situations. This is because it takes a small amount of time for the microcontroller to communicate with the software, and then send a signal back to turn on or off the LED. 
 
-Replace the 10k resistor with another LED (negative leg to ground). 
+__Replace the 10k resistor with another LED (negative leg to ground). __
 
-b.	What happens when you place your finger over the photoresistor?
+__b.	What happens when you place your finger over the photoresistor?__
 
-c.	How does this help you visualize Ohm’s Law?
+__c.	How does this help you visualize Ohm’s Law?__
 
 Part 4 – LED dimmer using PWM
 
@@ -261,6 +261,8 @@ Connect the oscilloscope to the LED pin and observe and record what happens to t
 **Figure 6. Displayed PWM signal**
 
 # Conclusion
+
+The purpose of this lab was to learn more about the microcontroller we will be using in the remaining labs and for our projects in addition to basic coding structure for Arduino IDE. Part one introduced the process on how to download a program to the Arduino and practice connecting the circuit to the board. Part 2 introduced how to use variable inputs from a potentiometer in a program to adjust signal times and was later used again to retrieve analog values from a photoresistor. Part three utilized an if statement in order to structure a conditional program to activate the LED when certain values from the photoresistor were detected. Lastly, part 4 demonstrated how to map data sets to different values and assign the mapped values to a digital pin in order to create a step system that functions withing the value range of the potentiometer so a dimming effect can be observed. These basic programming functions can be used in a wide range of applications and are the basis for logic based programs. 
 
 # Sources 
 **Figures 1-4 circuit schematic images**
