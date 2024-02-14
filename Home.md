@@ -72,9 +72,33 @@ During this lab, we used Arduino as a microcontroller to understand the basics o
 # Test Procedures
 **Part 1 - Blinking an LED**
 
-1. 
+1. Open the Blink program from the Arduino library located under File> Examples> Basics> Blink
+2. Download the program to the Arduino and run the program
 
 **Part 1 Code**
+```c++
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(1000);                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(1000);                      // wait for a second
+}
+```
+
+**Part 2 - Controlling an LED with a potentiometer**
+
+1. Open the Analog Read Serial program from the Arduino library located under File> Basics> AnalogReadSerial
+2. Copy the code from the Blink program into AnalogReadSerial
+3. Change the interval of Blink from 1000 to A0 so it will be controlled by the potentiometer
+
+**Part 2 Code**
 ```c++
 / the setup routine runs once when you press reset:
 void setup() {
@@ -95,38 +119,6 @@ digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
   int sensorValue = analogRead(A0);
   // print out the value you read:
   Serial.println(sensorValue);
-}
-```
-
-**Part 2 - Controlling an LED with a potentiometer**
-
-1. 
-
-**Part 2 Code**
-**Code for Night Light**
-
-```c++
-void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-// the loop routine runs over and over again forever:
-void loop() {
-
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A0);
-  // print out the value you read:
-  Serial.println(sensorValue);
-
-  if (sensorValue>400) //Dark
-  {
-  digitalWrite(LED_BUILTIN,HIGH); 
-  }
-  else {
-    digitalWrite(LED_BUILTIN,LOW); 
-  }
 }
 ```
 
@@ -263,3 +255,30 @@ Connect the oscilloscope to the LED pin and observe and record what happens to t
 JOEL_E_B. “Sparkfun Inventor’s Kit Experiment Guide - v4.1.” SparkFun Inventor’s Kit Experiment Guide - v4.1 - SparkFun Learn, learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/project-1-light. Accessed 13 Feb. 2024. 
 
 
+
+**Code for Night Light**
+
+```c++
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A0);
+  // print out the value you read:
+  Serial.println(sensorValue);
+
+  if (sensorValue>400) //Dark
+  {
+  digitalWrite(LED_BUILTIN,HIGH); 
+  }
+  else {
+    digitalWrite(LED_BUILTIN,LOW); 
+  }
+}
+```
