@@ -262,38 +262,10 @@ Connect the oscilloscope to the LED pin and observe and record what happens to t
 
 # Conclusion
 
-The purpose of this lab was to learn more about the microcontroller we will be using in the remaining labs and for our projects in addition to basic coding structure for Arduino IDE. Part one introduced the process on how to download a program to the Arduino and practice connecting the circuit to the board. Part 2 introduced how to use variable inputs from a potentiometer in a program to adjust signal times and was later used again to retrieve analog values from a photoresistor. Part three utilized an if statement in order to structure a conditional program to activate the LED when certain values from the photoresistor were detected. Lastly, part 4 demonstrated how to map data sets to different values and assign the mapped values to a digital pin in order to create a step system that functions withing the value range of the potentiometer so a dimming effect can be observed. These basic programming functions can be used in a wide range of applications and are the basis for logic based programs. 
+The purpose of this lab was to learn more about the microcontroller we will be using in the remaining labs and for our projects in addition to basic coding structure for Arduino IDE. We began by learning the procedure on how to download programs onto the Arduino and the basic procedure of how to draw power from the board and output a signal using digital pin connections and PWM connections. Variable resistor components were then introduced with a potentiometer that could adjust signal frequency to an LED and was later used with a photoresistor to retrieve digital values. Coding structure was later introduced with the creation of if statement to create a program to activate an LED for specific photoresistor values. Lastly, the map data function was used to convert  and assign values generated from the potentiometer to a digital pin in order to create a dimming effect that could be seen using only the potentiometer. 
 
 # Sources 
 **Figures 1-4 circuit schematic images**
  
 JOEL_E_B. “Sparkfun Inventor’s Kit Experiment Guide - v4.1.” SparkFun Inventor’s Kit Experiment Guide - v4.1 - SparkFun Learn, learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v41/project-1-light. Accessed 13 Feb. 2024. 
 
-
-
-
-**Code for nightlight with potentiometer**
-```c++
-void setup() {
-  // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
-  pinMode(PIN5, OUTPUT);
-}
-
-// the loop routine runs over and over again forever:
-void loop() {
-
-  // read the input on analog pin 0:
-  int sensorValue = analogRead(A1);
-  // print out the value you read:
-  Serial.println(sensorValue);
-
-  if (sensorValue>400) //Dark
-  {
-  digitalWrite(PIN5,HIGH); 
-  }
-  else {
-    digitalWrite(PIN5,LOW); 
-  }
-}
-```
