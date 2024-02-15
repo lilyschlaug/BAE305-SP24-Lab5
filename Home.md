@@ -132,10 +132,9 @@ digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
 5. Establish the protocol if the photoresistor detects a value greater than the max analog value determined experimentally then turn on the LED
 6. Add an else statement for any value lower than the max analog value for the LED to remain off
 7. Download the program to the Arduino and run the program
-
+8. Confirm that the program works by removing the photoresistor and replacing it with the potentiometer and adjusting the resistance until the LED turns on
 
 **Part 3 Code**
-**Code for Night Light**
 
 ```c++
 void setup() {
@@ -158,6 +157,33 @@ void loop() {
   }
   else {
     digitalWrite(LED_BUILTIN,LOW); 
+  }
+}
+```
+
+**Part 3 code with potentiometer**
+
+```c++
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  pinMode(PIN5, OUTPUT);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+  // read the input on analog pin 0:
+  int sensorValue = analogRead(A1);
+  // print out the value you read:
+  Serial.println(sensorValue);
+
+  if (sensorValue>400) //Dark
+  {
+  digitalWrite(PIN5,HIGH); 
+  }
+  else {
+    digitalWrite(PIN5,LOW); 
   }
 }
 ```
